@@ -1,0 +1,222 @@
+:root {
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --blanco: #fff;
+    --oscuro: #212121;
+    --grisClaro: #DFE9F3;
+}
+/* Global */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+}
+/* Scroll Snap */
+.navegacion-principal,
+.servicios,
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+/* Utilidades */
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.boton {
+    width: 70%;
+    margin-top: 3rem;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: var(--secundario);
+    border: none;
+
+}
+.boton:hover {
+    cursor: pointer;
+}
+.sombra {
+    padding: 2rem;
+    background-color: var(--blanco);
+    box-shadow: 0px 2px 15px 0px rgba(112,112,112,.48);
+    border-radius: .5rem;
+}
+/* Tipografia */
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+h1, h2, h3{
+    text-align: center;
+}
+.titulo span {
+    font-size: 2rem;
+}
+/* Navegación Principal */
+.nav-bg {
+    background-color: var(--secundario);
+}
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navegacion-principal a {
+    padding: 1rem 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--blanco);
+    text-decoration: none;
+}
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+/* Hero */
+.hero {   
+    position: relative;
+    height: 45rem;
+    margin-bottom: 2rem;
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contenido-hero {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+    background-color: rgba(0, 0, 0, .6);
+}
+.contenido-hero .ubicacion {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* SERVICIOS */
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.servicio .iconos {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    background-color: var(--primario);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.servicio h3 {
+    font-weight: normal;
+    color: var(--secundario);
+}
+.servicio p {
+    font-size: 1.4rem;
+    line-height: 2;
+}
+
+/* FORMULARIO */
+.formulario {
+    width: min(60rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--gris);
+    border-radius: 1rem;
+}
+.formulario fieldset {
+    border: none;
+}
+.formulario legend {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    color: var(--primario);
+}
+.contenedor-campos {
+    font-size: 1.2rem;
+}
+.campo {
+    margin-bottom: .5rem;
+}
+.campo label {
+    font-weight: bold;
+    color: var(--blanco);
+    display: block;
+}
+.campo .input-text {
+    width: 100%;
+    padding: 1.5em;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+}
+.campo textarea {
+    height: 20rem;
+}
+.btn-flex {
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-submit {
+    width: 100%;
+}
+
+/* FOOTER */
+.footer {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+    }
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+    .campo:nth-child(3),
+    .campo:nth-child(4) {
+        grid-column: 1 / 3;
+    }
+
+}
